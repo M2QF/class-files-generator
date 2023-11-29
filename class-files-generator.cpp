@@ -70,7 +70,7 @@ int main(int argc, char  *argv[])
         return 1;
     }
 
-    if (filename == "")
+    if (filename.empty())
     {
         std::cout << "No filename specified, using class name as filename" << std::endl;
         for (const char& c : classname)
