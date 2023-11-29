@@ -1,1 +1,2 @@
-# class-files-generator
+# Class files generator
+Command line interface that produces C++ class files.
