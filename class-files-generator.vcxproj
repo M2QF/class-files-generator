@@ -132,6 +132,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="class-files-generator.cpp" />
+    <ClCompile Include="corewriter.cpp" />
+    <ClCompile Include="filewriter.cpp" />
+    <ClCompile Include="headerwriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="corewriter.h" />
+    <ClInclude Include="filewriter.h" />
+    <ClInclude Include="headerwriter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
