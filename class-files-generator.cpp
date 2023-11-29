@@ -2,10 +2,84 @@
 //
 
 #include <iostream>
+#include <string>
 
-int main()
+void print_help(const char *name) noexcept
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Usage: " << name << " [-f filename] <class-name>" << std::endl;
+}
+
+bool validate_class_name(const std::string& clsName) noexcept
+{
+    std::cout << "Validating class name \"" << clsName << "\"..." << std::endl;
+    if (clsName.empty())
+    {
+		std::cerr << "Class name cannot be empty" << std::endl;
+		return false;
+	}
+
+    if (isdigit(clsName[0]))
+    {
+		std::cerr << "Class name cannot start with a digit" << std::endl;
+		return false;
+	}
+
+    for (const char& c : clsName)
+    {
+        if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c<= 'Z') || c == '_'))
+        {
+			std::cerr << "Class name can only contain digits, letters and underscores" << std::endl;
+			return false;
+		}
+	}
+    std::cout << "Class name \"" << clsName << "\" is valid." << std::endl;
+	return true;
+}
+
+int main(int argc, char  *argv[])
+{
+    std::cout << "\t\t----Class files generator----" << std::endl;
+    if (argc < 2)
+    {
+		print_help(argv[0]);
+		return 0;
+	}
+
+    std::string filename = "";
+    std::string classname = "";
+
+    if (argc == 2)
+    {
+		classname = argv[1];
+	}
+    else if (argc == 4)
+    {
+        filename = argv[2];
+        classname = argv[3];
+    }
+    else
+    {
+        std::cerr << "Invalid number of arguments" << std::endl;
+        print_help(argv[0]);
+        return 1;
+    }
+
+    if (!validate_class_name(classname))
+    {
+        std::cerr << "Invalid class name" << std::endl;
+        return 1;
+    }
+
+    if (filename == "")
+    {
+        std::cout << "No filename specified, using class name as filename" << std::endl;
+        for (const char& c : classname)
+        {
+            filename.push_back(std::tolower(c));
+        }
+	}
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
