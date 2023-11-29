@@ -10,17 +10,17 @@ ifeq ($(DEBUG), true)
 	CFLAGS+=-DDEBUG
 endif
 
-bin/class-file-generator: obj/class-file-generator.o obj/filewriter.o obj/headerwriter.o obj/corewriter.o
+bin/class-files-generator: obj/class-files-generator.o obj/filewriter.o obj/headerwriter.o obj/corewriter.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-obj/class-file-generator.o: src/class-file-generator.cpp src/filewriter.h src/headerwriter.h src/corewriter.h
+obj/class-files-generator.o: class-files-generator.cpp filewriter.h headerwriter.h corewriter.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-obj/filewriter.o: src/filewriter.cpp src/filewriter.h
+obj/filewriter.o: filewriter.cpp filewriter.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-obj/headerwriter.o: src/headerwriter.cpp src/headerwriter.h
+obj/headerwriter.o: headerwriter.cpp headerwriter.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-obj/corewriter.o: src/corewriter.cpp src/corewriter.h
+obj/corewriter.o: corewriter.cpp corewriter.h
 	$(CC) $(CFLAGS) -c -o $@ $<
