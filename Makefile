@@ -1,9 +1,9 @@
 CC=g++
 
 ifeq ($(RELEASE), true)
-	CFLAGS=-O3 -s
+	CFLAGS=-O3 -s -std=c++2a
 else
-	CFLAGS=-g -Wall -Wextra
+	CFLAGS=-g -Wall -Wextra -std=c++2a
 endif
 
 ifeq ($(DEBUG), true)
