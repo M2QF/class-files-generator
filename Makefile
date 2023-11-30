@@ -24,3 +24,8 @@ obj/headerwriter.o: headerwriter.cpp headerwriter.h
 
 obj/corewriter.o: corewriter.cpp corewriter.h
 	$(CC) $(CFLAGS) -c -o $@ $<
+
+release :
+	rm -f -v obj/*.o
+	rm -f -v bin/class-files-generator
+	make RELEASE=true
