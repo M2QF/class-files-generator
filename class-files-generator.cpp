@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
 
-void print_help(const char *name) noexcept
+static void print_help(const char *name) noexcept
 {
     std::cout << "Usage: " << name << " [-f filename] <class-name>" << std::endl;
 }
 
-bool validate_class_name(const std::string& clsName) noexcept
+static bool validate_class_name(const std::string& clsName) noexcept
 {
     std::cout << "Validating class name \"" << clsName << "\"..." << std::endl;
     if (clsName.empty())
@@ -72,12 +73,12 @@ int main(int argc, char  *argv[])
 
     if (filename.empty())
     {
+        filename = classname;
         std::cout << "No filename specified, using class name as filename" << std::endl;
-        for (const char& c : classname)
-        {
-            filename.push_back(std::tolower(c));
-        }
+        std::transform(filename.cbegin(), filename.cend(), filename.begin(), std::tolower);
 	}
+
+    std::cout << "Filename: " << filename << std::endl;
 
     return 0;
 }
