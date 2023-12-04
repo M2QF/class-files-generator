@@ -25,7 +25,16 @@ obj/headerwriter.o: headerwriter.cpp headerwriter.h
 obj/corewriter.o: corewriter.cpp corewriter.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-release :
+clean_obj :
 	rm -f -v obj/*.o
+
+clean_bin :
 	rm -f -v bin/class-files-generator
+
+clean :
+	make clean_obj
+	make clean_bin
+
+release :
+	make clean
 	make RELEASE=true
