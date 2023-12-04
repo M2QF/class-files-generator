@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cctype>
 #include <algorithm>
 
 static void print_help(const char *name) noexcept
@@ -10,49 +11,49 @@ static void print_help(const char *name) noexcept
     std::cout << "Usage: " << name << " [-f filename] <class-name>" << std::endl;
 }
 
-static bool validate_class_name(const std::string& clsName) noexcept
+static bool validate_class_name(const std::string &clsName) noexcept
 {
     std::cout << "Validating class name \"" << clsName << "\"..." << std::endl;
     if (clsName.empty())
     {
-		std::cerr << "Class name cannot be empty" << std::endl;
-		return false;
-	}
+        std::cerr << "Class name cannot be empty" << std::endl;
+        return false;
+    }
 
     if (isdigit(clsName[0]))
     {
-		std::cerr << "Class name cannot start with a digit" << std::endl;
-		return false;
-	}
+        std::cerr << "Class name cannot start with a digit" << std::endl;
+        return false;
+    }
 
-    for (const char& c : clsName)
+    for (const char &c : clsName)
     {
-        if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c<= 'Z') || c == '_'))
+        if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == '_'))
         {
-			std::cerr << "Class name can only contain digits, letters and underscores" << std::endl;
-			return false;
-		}
-	}
+            std::cerr << "Class name can only contain digits, letters and underscores" << std::endl;
+            return false;
+        }
+    }
     std::cout << "Class name \"" << clsName << "\" is valid." << std::endl;
-	return true;
+    return true;
 }
 
-int main(int argc, char  *argv[])
+int main(int argc, char *argv[])
 {
     std::cout << "\t\t----Class files generator----" << std::endl;
     if (argc < 2)
     {
-		print_help(argv[0]);
-		return 0;
-	}
+        print_help(argv[0]);
+        return 0;
+    }
 
     std::string filename = "";
     std::string classname = "";
 
     if (argc == 2)
     {
-		classname = argv[1];
-	}
+        classname = argv[1];
+    }
     else if (argc == 4)
     {
         filename = argv[2];
@@ -75,10 +76,16 @@ int main(int argc, char  *argv[])
     {
         filename = classname;
         std::cout << "No filename specified, using class name as filename" << std::endl;
+#ifdef _WIN32
         std::transform(filename.cbegin(), filename.cend(), filename.begin(), std::tolower);
-	}
+#else
+        std::transform(filename.begin(), filename.end(), filename.begin(), [](unsigned char c) -> unsigned char
+                       { return std::tolower(c); });
+#endif
+    }
 
-    std::cout << "Filename: " << filename << std::endl;
+    std::cout << "Core filename: " << filename << ".cpp" << std::endl;
+    std::cout << "Header filename: " << filename << ".h" << std::endl;
 
     return 0;
 }
@@ -86,7 +93,7 @@ int main(int argc, char  *argv[])
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
+// Tips for Getting Started:
 //   1. Use the Solution Explorer window to add/manage files
 //   2. Use the Team Explorer window to connect to source control
 //   3. Use the Output window to see build output and other messages
