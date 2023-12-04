@@ -6,10 +6,6 @@ else
 	CFLAGS=-g -Wall -Wextra -std=c++2a
 endif
 
-ifeq ($(DEBUG), true)
-	CFLAGS+=-DDEBUG
-endif
-
 bin/class-files-generator: obj/class-files-generator.o obj/filewriter.o obj/headerwriter.o obj/corewriter.o
 	$(CC) $(CFLAGS) -o $@ $^
 
