@@ -1,0 +1,29 @@
+release:
+- base-branch: 'master'
+
+github:
+  - changed-files:
+    - '*.md'
+    - '.github/**'
+    - '.git*'
+
+source:
+  - changed-files:
+    - '*.cpp'
+
+headers:
+  - changed-files:
+    - '*.h'
+    - '*.hpp'
+
+makefile:
+  - changed-files:
+    - 'Makefile'
+    - 'makefile'
+    - '*.mk'
+
+vs:
+  - changed-files:
+    - '*.sln'
+    - '*.vcxproj'
+    - '*.vcxproj.*'
