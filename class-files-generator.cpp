@@ -5,6 +5,7 @@
 #include <string>
 #include <cctype>
 #include <algorithm>
+#include <thread>
 
 static void print_help(const char *name) noexcept
 {
