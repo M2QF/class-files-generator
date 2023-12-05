@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     }
     else if (argc == 4)
     {
-        if (!strcmp(argv[1], "-f"))
+        if (strcmp(argv[1], "-f"))
         {
 			std::cerr << "Invalid argument: " << argv[1] << std::endl;
 			print_help(argv[0]);
