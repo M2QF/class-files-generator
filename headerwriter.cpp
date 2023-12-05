@@ -29,7 +29,7 @@ void HeaderWriter::write()
 
 	file << "public:" << endl;
 	file << "\t" << getClassname() << "();" << endl;
-	file << "\t" << "~" << getClassname() << "();" << endl;
+	file << "\t" << "~" << getClassname() << "();" << endl << endl;
 
 	file << "private:" << endl;
 	file << "\t" << endl;
