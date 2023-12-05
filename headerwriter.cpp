@@ -22,6 +22,8 @@ void HeaderWriter::write()
 
 	file << "#pragma once" << endl;
 
+	file << endl;
+
 	file << "class " << getClassname() << endl;
 	file << "{" << endl;
 
