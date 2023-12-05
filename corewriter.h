@@ -58,7 +58,7 @@ public:
 
     /**
      * @brief Write the .cpp file
-     * 
+     * @throws std::runtime_error if the file cannot be opened
      * @param mutex The mutex to lock
      */
     virtual void write(std::mutex* mutex = nullptr) override;
