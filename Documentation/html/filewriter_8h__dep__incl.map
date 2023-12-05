@@ -1,5 +1,5 @@
 <map id="filewriter.h" name="filewriter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="188,5,279,32"/>
+<area shape="rect" id="node1" title="Provides the FileWriter class." alt="" coords="188,5,279,32"/>
 <area shape="rect" id="node2" href="$corewriter_8h.html" title="Provides the CoreWriter class." alt="" coords="57,80,156,107"/>
 <area shape="rect" id="node5" href="$filewriter_8cpp.html" title="Implements filewriter.h." alt="" coords="180,80,287,107"/>
 <area shape="rect" id="node6" href="$headerwriter_8h.html" title="Provides the HeaderWriter class." alt="" coords="311,80,427,107"/>
