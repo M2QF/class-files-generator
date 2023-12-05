@@ -14,9 +14,11 @@ void CoreWriter::write(){
     cout << "Writing " << FileWriter::getFilename() << ".cpp" << endl;
     //write the include statements
     file << "#include \"" << FileWriter::getClassname() << ".h\"" << endl;
+    file << endl;
     //write the default constructor
     file << FileWriter::getClassname() << "::" << FileWriter::getClassname() << "(){" << endl;
     file << "}" << endl;
+    file << endl;
     //write the default destructor 
     file << FileWriter::getClassname() << "::~" << FileWriter::getClassname() << "(){" << endl;
     file << "}" << endl;
