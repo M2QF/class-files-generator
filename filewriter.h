@@ -42,9 +42,9 @@ public:
 
 	/**
 	 * @brief Writes the file
-	 * 
+	 * @param mutex mutex to lock
 	 */
-	virtual void write(std::mutex* = nullptr) = 0;
+	virtual void write(std::mutex* mutex = nullptr) = 0;
 
 	/**
 	 * @brief Get the Classname object
