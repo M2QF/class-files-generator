@@ -1,0 +1,5 @@
+<map id="CoreWriter::write" name="CoreWriter::write">
+<area shape="rect" id="node1" title="Write the .cpp file." alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71" title="Get the Classname object." alt="" coords="187,5,373,32"/>
+<area shape="rect" id="node3" href="$class_file_writer.html#a5d23727ccf0730398b17dab40a568097" title="Get the Filename object." alt="" coords="193,56,367,83"/>
+</map>

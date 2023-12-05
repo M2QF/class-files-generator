@@ -67,29 +67,40 @@ $(function() {
 <div class="title">filewriter.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_file_writer.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_file_writer.html">FileWriter</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="class_file_writer.html">FileWriter</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_file_writer.html">FileWriter</a>(<span class="keyword">const</span> std::string&amp; classname, <span class="keyword">const</span> std::string&amp; filename) : classname(classname), filename(filename) {};</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_file_writer.html">FileWriter</a>() = <span class="keywordflow">default</span>;</div>
+<a href="filewriter_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> write(std::mutex* = <span class="keyword">nullptr</span>) = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> std::string&amp; getClassname()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> classname; }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> std::string&amp; getFilename()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> filename; }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string classname;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string filename;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="ttc" id="aclass_file_writer_html"><div class="ttname"><a href="class_file_writer.html">FileWriter</a></div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00006">filewriter.h:7</a></div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_file_writer.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_file_writer.html">FileWriter</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_file_writer.html#a3835635f39da1be95a44b0da0cba44d5">   29</a></span>&#160;    <a class="code" href="class_file_writer.html#a3835635f39da1be95a44b0da0cba44d5">FileWriter</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_file_writer.html#ac6fd9b5dd1a5f64b38a76e78d9a7d2cd">   35</a></span>&#160;    <a class="code" href="class_file_writer.html#ac6fd9b5dd1a5f64b38a76e78d9a7d2cd">FileWriter</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a>, <span class="keyword">const</span> std::string&amp; <a class="code" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a>) : <a class="code" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a>(<a class="code" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a>), <a class="code" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a>(<a class="code" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a>) {};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_file_writer.html#a004bf2acbdc1a2f72015cd71f17aa2e2">   41</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_file_writer.html#a004bf2acbdc1a2f72015cd71f17aa2e2">~FileWriter</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_file_writer.html#a0444468c6d9876852f2583445e354251">   47</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_file_writer.html#a0444468c6d9876852f2583445e354251">write</a>(std::mutex* = <span class="keyword">nullptr</span>) = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">   54</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">getClassname</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a>; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_file_writer.html#a5d23727ccf0730398b17dab40a568097">   60</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="class_file_writer.html#a5d23727ccf0730398b17dab40a568097">getFilename</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a>; }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">   67</a></span>&#160;    std::string <a class="code" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">   72</a></span>&#160;    std::string <a class="code" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="ttc" id="aclass_file_writer_html"><div class="ttname"><a href="class_file_writer.html">FileWriter</a></div><div class="ttdoc">The FileWriter class is the base class for the header and core writers.</div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00021">filewriter.h:22</a></div></div>
+<div class="ttc" id="aclass_file_writer_html_a004bf2acbdc1a2f72015cd71f17aa2e2"><div class="ttname"><a href="class_file_writer.html#a004bf2acbdc1a2f72015cd71f17aa2e2">FileWriter::~FileWriter</a></div><div class="ttdeci">virtual ~FileWriter()=default</div><div class="ttdoc">Destroy the File Writer object.</div></div>
+<div class="ttc" id="aclass_file_writer_html_a0444468c6d9876852f2583445e354251"><div class="ttname"><a href="class_file_writer.html#a0444468c6d9876852f2583445e354251">FileWriter::write</a></div><div class="ttdeci">virtual void write(std::mutex *=nullptr)=0</div><div class="ttdoc">Writes the file.</div></div>
+<div class="ttc" id="aclass_file_writer_html_a074e38300c2b517f77e0f406f140a8b7"><div class="ttname"><a href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">FileWriter::classname</a></div><div class="ttdeci">std::string classname</div><div class="ttdoc">class name</div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00067">filewriter.h:67</a></div></div>
+<div class="ttc" id="aclass_file_writer_html_a3835635f39da1be95a44b0da0cba44d5"><div class="ttname"><a href="class_file_writer.html#a3835635f39da1be95a44b0da0cba44d5">FileWriter::FileWriter</a></div><div class="ttdeci">FileWriter()=delete</div><div class="ttdoc">Construct a new File Writer object.</div></div>
+<div class="ttc" id="aclass_file_writer_html_a5d23727ccf0730398b17dab40a568097"><div class="ttname"><a href="class_file_writer.html#a5d23727ccf0730398b17dab40a568097">FileWriter::getFilename</a></div><div class="ttdeci">const std::string &amp; getFilename() const</div><div class="ttdoc">Get the Filename object.</div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00060">filewriter.h:60</a></div></div>
+<div class="ttc" id="aclass_file_writer_html_ac6fd9b5dd1a5f64b38a76e78d9a7d2cd"><div class="ttname"><a href="class_file_writer.html#ac6fd9b5dd1a5f64b38a76e78d9a7d2cd">FileWriter::FileWriter</a></div><div class="ttdeci">FileWriter(const std::string &amp;classname, const std::string &amp;filename)</div><div class="ttdoc">Construct a new File Writer object.</div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00035">filewriter.h:35</a></div></div>
+<div class="ttc" id="aclass_file_writer_html_ad752e2b2371ad5759131494fdaca4f71"><div class="ttname"><a href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">FileWriter::getClassname</a></div><div class="ttdeci">const std::string &amp; getClassname() const</div><div class="ttdoc">Get the Classname object.</div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00054">filewriter.h:54</a></div></div>
+<div class="ttc" id="aclass_file_writer_html_add8053357adf18b0874bd5e06a3a98ce"><div class="ttname"><a href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">FileWriter::filename</a></div><div class="ttdeci">std::string filename</div><div class="ttdoc">file name</div><div class="ttdef"><b>Definition:</b> <a href="filewriter_8h_source.html#l00072">filewriter.h:72</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

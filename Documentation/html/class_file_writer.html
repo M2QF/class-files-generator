@@ -65,41 +65,176 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_file_writer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">FileWriter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_file_writer.html" title="The FileWriter class is the base class for the header and core writers.">FileWriter</a> class is the base class for the header and core writers.  
+ <a href="class_file_writer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="filewriter_8h_source.html">filewriter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for FileWriter:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_file_writer__inherit__graph.png" border="0" usemap="#a_file_writer_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_file_writer_inherit__map" id="a_file_writer_inherit__map">
-<area shape="rect" title=" " alt="" coords="71,5,157,32"/>
-<area shape="rect" href="class_core_writer.html" title=" " alt="" coords="5,80,97,107"/>
-<area shape="rect" href="class_header_writer.html" title=" " alt="" coords="122,80,231,107"/>
+<area shape="rect" title="The FileWriter class is the base class for the header and core writers." alt="" coords="71,5,157,32"/>
+<area shape="rect" href="class_core_writer.html" title="The CoreWriter class writes the .cpp file." alt="" coords="5,80,97,107"/>
+<area shape="rect" href="class_header_writer.html" title="The HeaderWriter class writes the .h file." alt="" coords="122,80,231,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3835635f39da1be95a44b0da0cba44d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a3835635f39da1be95a44b0da0cba44d5">FileWriter</a> ()=delete</td></tr>
+<tr class="memdesc:a3835635f39da1be95a44b0da0cba44d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new File Writer object.  <a href="class_file_writer.html#a3835635f39da1be95a44b0da0cba44d5">More...</a><br /></td></tr>
+<tr class="separator:a3835635f39da1be95a44b0da0cba44d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6fd9b5dd1a5f64b38a76e78d9a7d2cd"><td class="memItemLeft" align="right" valign="top"><a id="ac6fd9b5dd1a5f64b38a76e78d9a7d2cd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FileWriter</b> (const std::string &amp;classname, const std::string &amp;filename)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#ac6fd9b5dd1a5f64b38a76e78d9a7d2cd">FileWriter</a> (const std::string &amp;<a class="el" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a>, const std::string &amp;<a class="el" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a>)</td></tr>
+<tr class="memdesc:ac6fd9b5dd1a5f64b38a76e78d9a7d2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new File Writer object. <br /></td></tr>
 <tr class="separator:ac6fd9b5dd1a5f64b38a76e78d9a7d2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004bf2acbdc1a2f72015cd71f17aa2e2"><td class="memItemLeft" align="right" valign="top"><a id="a004bf2acbdc1a2f72015cd71f17aa2e2"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a004bf2acbdc1a2f72015cd71f17aa2e2">~FileWriter</a> ()=default</td></tr>
+<tr class="memdesc:a004bf2acbdc1a2f72015cd71f17aa2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the File Writer object. <br /></td></tr>
+<tr class="separator:a004bf2acbdc1a2f72015cd71f17aa2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0444468c6d9876852f2583445e354251"><td class="memItemLeft" align="right" valign="top"><a id="a0444468c6d9876852f2583445e354251"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (std::mutex *=nullptr)=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a0444468c6d9876852f2583445e354251">write</a> (std::mutex *=nullptr)=0</td></tr>
+<tr class="memdesc:a0444468c6d9876852f2583445e354251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the file. <br /></td></tr>
 <tr class="separator:a0444468c6d9876852f2583445e354251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad752e2b2371ad5759131494fdaca4f71"><td class="memItemLeft" align="right" valign="top"><a id="ad752e2b2371ad5759131494fdaca4f71"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getClassname</b> () const</td></tr>
+<tr class="memitem:ad752e2b2371ad5759131494fdaca4f71"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">getClassname</a> () const</td></tr>
+<tr class="memdesc:ad752e2b2371ad5759131494fdaca4f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Classname object.  <a href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">More...</a><br /></td></tr>
 <tr class="separator:ad752e2b2371ad5759131494fdaca4f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d23727ccf0730398b17dab40a568097"><td class="memItemLeft" align="right" valign="top"><a id="a5d23727ccf0730398b17dab40a568097"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getFilename</b> () const</td></tr>
+<tr class="memitem:a5d23727ccf0730398b17dab40a568097"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a5d23727ccf0730398b17dab40a568097">getFilename</a> () const</td></tr>
+<tr class="memdesc:a5d23727ccf0730398b17dab40a568097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Filename object.  <a href="class_file_writer.html#a5d23727ccf0730398b17dab40a568097">More...</a><br /></td></tr>
 <tr class="separator:a5d23727ccf0730398b17dab40a568097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a074e38300c2b517f77e0f406f140a8b7"><td class="memItemLeft" align="right" valign="top"><a id="a074e38300c2b517f77e0f406f140a8b7"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a074e38300c2b517f77e0f406f140a8b7">classname</a></td></tr>
+<tr class="memdesc:a074e38300c2b517f77e0f406f140a8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">class name <br /></td></tr>
+<tr class="separator:a074e38300c2b517f77e0f406f140a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add8053357adf18b0874bd5e06a3a98ce"><td class="memItemLeft" align="right" valign="top"><a id="add8053357adf18b0874bd5e06a3a98ce"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#add8053357adf18b0874bd5e06a3a98ce">filename</a></td></tr>
+<tr class="memdesc:add8053357adf18b0874bd5e06a3a98ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">file name <br /></td></tr>
+<tr class="separator:add8053357adf18b0874bd5e06a3a98ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="filewriter_8h_source.html#l00006">6</a> of file <a class="el" href="filewriter_8h_source.html">filewriter.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>The <a class="el" href="class_file_writer.html" title="The FileWriter class is the base class for the header and core writers.">FileWriter</a> class is the base class for the header and core writers. </p>
+
+<p class="definition">Definition at line <a class="el" href="filewriter_8h_source.html#l00021">21</a> of file <a class="el" href="filewriter_8h_source.html">filewriter.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3835635f39da1be95a44b0da0cba44d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3835635f39da1be95a44b0da0cba44d5">&#9670;&nbsp;</a></span>FileWriter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FileWriter::FileWriter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new File Writer object. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Deleted </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad752e2b2371ad5759131494fdaca4f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad752e2b2371ad5759131494fdaca4f71">&#9670;&nbsp;</a></span>getClassname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; FileWriter::getClassname </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Classname object. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; class name </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filewriter_8h_source.html#l00054">54</a> of file <a class="el" href="filewriter_8h_source.html">filewriter.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_file_writer_ad752e2b2371ad5759131494fdaca4f71_icgraph.png" border="0" usemap="#aclass_file_writer_ad752e2b2371ad5759131494fdaca4f71_icgraph" alt=""/></div>
+<map name="aclass_file_writer_ad752e2b2371ad5759131494fdaca4f71_icgraph" id="aclass_file_writer_ad752e2b2371ad5759131494fdaca4f71_icgraph">
+<area shape="rect" title="Get the Classname object." alt="" coords="187,5,373,32"/>
+<area shape="rect" href="class_core_writer.html#a5dc32749c7bce0abad88b023e93581bc" title="Write the .cpp file." alt="" coords="5,5,139,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d23727ccf0730398b17dab40a568097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d23727ccf0730398b17dab40a568097">&#9670;&nbsp;</a></span>getFilename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; FileWriter::getFilename </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Filename object. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; file name </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filewriter_8h_source.html#l00060">60</a> of file <a class="el" href="filewriter_8h_source.html">filewriter.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_file_writer_a5d23727ccf0730398b17dab40a568097_icgraph.png" border="0" usemap="#aclass_file_writer_a5d23727ccf0730398b17dab40a568097_icgraph" alt=""/></div>
+<map name="aclass_file_writer_a5d23727ccf0730398b17dab40a568097_icgraph" id="aclass_file_writer_a5d23727ccf0730398b17dab40a568097_icgraph">
+<area shape="rect" title="Get the Filename object." alt="" coords="187,5,361,32"/>
+<area shape="rect" href="class_core_writer.html#a5dc32749c7bce0abad88b023e93581bc" title="Write the .cpp file." alt="" coords="5,5,139,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="filewriter_8h_source.html">filewriter.h</a></li>
 </ul>
 </div><!-- contents -->

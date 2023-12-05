@@ -1,4 +1,4 @@
 <map id="HeaderWriter" name="HeaderWriter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node2" href="$class_file_writer.html" title=" " alt="" coords="17,5,103,32"/>
+<area shape="rect" id="node1" title="The HeaderWriter class writes the .h file." alt="" coords="5,80,115,107"/>
+<area shape="rect" id="node2" href="$class_file_writer.html" title="The FileWriter class is the base class for the header and core writers." alt="" coords="17,5,103,32"/>
 </map>
