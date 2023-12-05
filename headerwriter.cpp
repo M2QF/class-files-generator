@@ -1,3 +1,14 @@
+/**
+ * @file headerwriter.cpp
+ * @author AiglonDore
+ * @brief Implements {@link headerwriter.h}.
+ * @version 1.1.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "headerwriter.h"
 
 #include <fstream>
