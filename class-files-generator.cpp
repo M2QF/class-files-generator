@@ -9,6 +9,7 @@
 #include <cstring>
 #include <future>
 #include <stdexcept>
+#include <mutex>
 
 #include "corewriter.h"
 #include "headerwriter.h"
@@ -107,13 +108,18 @@ int main(int argc, char *argv[])
     std::promise<void> promise;
     std::future<void> future = promise.get_future();
 
-    auto write_file = [&promise](FileWriter& writer) -> void
+    std::mutex coutMutex;
+
+    auto write_file = [&promise, &coutMutex](FileWriter& writer) -> void
         {
             try
             {
-                writer.write();
+                writer.write(&coutMutex);
                 promise.set_value();
+
+                coutMutex.lock();
                 std::cout << "Thread " << std::this_thread::get_id<< " finished." << std::endl;
+                coutMutex.unlock();
             }
             catch (...)
             {
@@ -125,9 +131,10 @@ int main(int argc, char *argv[])
     HeaderWriter headerWriter(classname, filename);
 
     std::thread coreThread(write_file, std::ref(coreWriter));
+
     try
     {
-        headerWriter.write();
+        headerWriter.write(&coutMutex);
         if (future.valid())
             future.get();
         else
@@ -139,6 +146,7 @@ int main(int argc, char *argv[])
     {
         std::cerr << "Error while generating files" << std::endl;
         std::cerr << e.what() << std::endl;
+        coreThread.join();
         return 1;
     }
 
