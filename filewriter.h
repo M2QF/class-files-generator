@@ -1,7 +1,7 @@
 /**
  * @file filewriter.h
  * @author AiglonDore
- * @brief 
+ * @brief Provides the {@link FileWriter} class
  * @version 1.1.1
  * @date 2023-12-05
  * 
