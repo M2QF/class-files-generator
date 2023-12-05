@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <thread>
 #include <cstring>
+#include <future>
+#include <stdexcept>
 
 #include "corewriter.h"
 #include "headerwriter.h"
@@ -101,16 +103,21 @@ int main(int argc, char *argv[])
     std::cout << "Header filename: " << filename << ".h" << std::endl;
 
     std::cout << "Generating files..." << std::endl;
-    auto write_file = [](FileWriter& writer) -> void
+
+    std::promise<void> promise;
+    std::future<void> future = promise.get_future();
+
+    auto write_file = [&promise](FileWriter& writer) -> void
         {
             try
             {
                 writer.write();
+                promise.set_value();
+                std::cout << "Thread " << std::this_thread::get_id<< " finished." << std::endl;
             }
-            catch (const std::exception& e)
+            catch (...)
             {
-                std::cerr << "Error writing file: \"" << writer.getFilename() << "\"" << std::endl;
-                std::cerr << e.what() << std::endl;
+                promise.set_exception(std::current_exception());
             }
 	};
 
@@ -118,10 +125,24 @@ int main(int argc, char *argv[])
     HeaderWriter headerWriter(filename, classname);
 
     std::thread coreThread(write_file, std::ref(coreWriter));
-    std::thread headerThread(write_file, std::ref(headerWriter));
+    try
+    {
+        headerWriter.write();
+        if (future.valid())
+            future.get();
+        else
+        {
+            throw std::runtime_error("Core thread is not valid");
+        }
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Error while generating files" << std::endl;
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
 
     coreThread.join();
-    headerThread.join();
 
     std::cout << "Done!" << std::endl;
 
