@@ -1,3 +1,14 @@
+/**
+ * @file class-files-generator.cpp
+ * @author AiglonDore and sarahnourgh
+ * @brief Main file
+ * @version 1.1.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 // class-files-generator.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
@@ -15,11 +26,23 @@
 #include "headerwriter.h"
 
 
+/**
+ * @brief Prints the help message
+ * 
+ * @param name The name of the program
+ */
 static void print_help(const char *name) noexcept
 {
     std::cout << "Usage: " << name << " [-f filename] <class-name>" << std::endl;
 }
 
+/**
+ * @brief Validates the class name
+ * 
+ * @param clsName The class name
+ * @return true if the class name is valid
+ * @return false if the class name is invalid
+ */
 static bool validate_class_name(const std::string &clsName) noexcept
 {
     std::cout << "Validating class name \"" << clsName << "\"..." << std::endl;
@@ -47,6 +70,13 @@ static bool validate_class_name(const std::string &clsName) noexcept
     return true;
 }
 
+/**
+ * @brief Main function
+ * 
+ * @param argc Main argument count
+ * @param argv Main argument values
+ * @return int output code
+ */
 int main(int argc, char *argv[])
 {
     std::cout << "\t\t----Class files generator----" << std::endl;
