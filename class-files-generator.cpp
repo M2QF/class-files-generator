@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
                 promise.set_value();
 
                 coutMutex.lock();
-                std::cout << "Thread " << std::this_thread::get_id<< " finished." << std::endl;
+                std::cout << "Thread " << std::this_thread::get_id() << " finished." << std::endl;
                 coutMutex.unlock();
             }
             catch (...)
