@@ -8,6 +8,10 @@
 #include <thread>
 #include <cstring>
 
+#include "corewriter.h"
+#include "headerwriter.h"
+
+
 static void print_help(const char *name) noexcept
 {
     std::cout << "Usage: " << name << " [-f filename] <class-name>" << std::endl;
@@ -95,6 +99,31 @@ int main(int argc, char *argv[])
 
     std::cout << "Core filename: " << filename << ".cpp" << std::endl;
     std::cout << "Header filename: " << filename << ".h" << std::endl;
+
+    std::cout << "Generating files..." << std::endl;
+    auto write_file = [](FileWriter& writer) -> void
+        {
+            try
+            {
+                writer.write();
+            }
+            catch (const std::exception& e)
+            {
+                std::cerr << "Error writing file: \"" << writer.getFilename() << "\"" << std::endl;
+                std::cerr << e.what() << std::endl;
+            }
+	};
+
+    CoreWriter coreWriter(filename, classname);
+    HeaderWriter headerWriter(filename, classname);
+
+    std::thread coreThread(write_file, std::ref(coreWriter));
+    std::thread headerThread(write_file, std::ref(headerWriter));
+
+    coreThread.join();
+    headerThread.join();
+
+    std::cout << "Done!" << std::endl;
 
     return 0;
 }
