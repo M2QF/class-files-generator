@@ -6,6 +6,7 @@
 #include <cctype>
 #include <algorithm>
 #include <thread>
+#include <cstring>
 
 static void print_help(const char *name) noexcept
 {
