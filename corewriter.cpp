@@ -2,7 +2,7 @@
  * @file corewriter.cpp
  * @author sarahnourgh
  * @brief Implements {@link corewriter.h}
- * @version 0.1
+ * @version 1.1.1
  * @date 2023-12-05
  * 
  * @copyright Copyright (c) 2023

@@ -1,8 +1,23 @@
+/**
+ * @file filewriter.h
+ * @author AiglonDore
+ * @brief 
+ * @version 1.1.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #pragma once
 
 #include <string>
 #include <mutex>
 
+/**
+ * @brief The FileWriter class is the base class for the header and core writers.
+ * 
+ */
 class FileWriter
 {
 public:
