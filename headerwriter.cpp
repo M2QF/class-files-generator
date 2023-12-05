@@ -8,7 +8,6 @@ using namespace std;
 
 void HeaderWriter::write()
 {
-	cout << "Writing header file " << getFilename() << ".h" << endl;
 	ofstream file(getFilename() + ".h");
 
 	if (!file.is_open())
