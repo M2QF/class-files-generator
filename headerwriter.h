@@ -8,6 +8,7 @@ class HeaderWriter :
     HeaderWriter& operator=(const HeaderWriter&) = delete;
 
 public:
+    HeaderWriter() = delete;
     explicit HeaderWriter(const std::string& classname, const std::string& filename) : FileWriter(classname, filename) {};
     virtual ~HeaderWriter() = default;
 
