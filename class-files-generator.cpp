@@ -113,6 +113,7 @@ int main(int argc, char *argv[])
             {
                 writer.write();
                 promise.set_value();
+                std::cout << "Thread " << std::this_thread::get_id<< " finished." << std::endl;
             }
             catch (...)
             {
