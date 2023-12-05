@@ -121,8 +121,8 @@ int main(int argc, char *argv[])
             }
 	};
 
-    CoreWriter coreWriter(filename, classname);
-    HeaderWriter headerWriter(filename, classname);
+    CoreWriter coreWriter(classname, filename);
+    HeaderWriter headerWriter(classname, filename);
 
     std::thread coreThread(write_file, std::ref(coreWriter));
     try
