@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void HeaderWriter::write()
+void HeaderWriter::write(std::mutex *coutMutex)
 {
 	ofstream file(getFilename() + ".h");
 
@@ -16,7 +16,15 @@ void HeaderWriter::write()
 	}
 	else
 	{
+		if (coutMutex != nullptr)
+		{
+			coutMutex->lock();
+		}
 		cout << "Writing header file " << getFilename() << ".h" << endl;
+		if (coutMutex != nullptr)
+		{
+			coutMutex->unlock();
+		}
 	}
 
 	file << "#pragma once" << endl;
@@ -35,7 +43,17 @@ void HeaderWriter::write()
 
 	file << "};" << endl;
 
+	if (coutMutex != nullptr)
+	{
+		coutMutex->lock();
+	}
+
 	cout << "Finished writing header file " << getFilename() << ".h" << endl;
+
+	if (coutMutex != nullptr)
+	{
+		coutMutex->unlock();
+	}
 
 	file.close();
 }

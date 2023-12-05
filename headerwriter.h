@@ -12,6 +12,6 @@ public:
     explicit HeaderWriter(const std::string& classname, const std::string& filename) : FileWriter(classname, filename) {};
     virtual ~HeaderWriter() = default;
 
-    virtual void write() override;
+    virtual void write(std::mutex* = nullptr) override;
 };
 
