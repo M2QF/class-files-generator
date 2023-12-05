@@ -2,11 +2,6 @@ CC=g++
 
 ifeq ($(RELEASE), true)
 	CFLAGS=-O3 -s -std=c++2a
-	ifeq ($(OS), MacOS)
-		EXT=.dmg
-	else
-		EXT=.out
-	endif
 else
 	CFLAGS=-g -Wall -Wextra -std=c++2a
 endif
@@ -39,5 +34,9 @@ clean :
 release :
 	make clean
 	make RELEASE=true
-	mv bin/class-files-generator bin/class-files-generator$(EXT)
+	ifeq ($(OS), MacOS)
+		mv bin/class-files-generator bin/class-files-generator.dmg
+	else
+		mv bin/class-files-generator bin/class-files-generator.out
+	endif
 	make clean_obj
