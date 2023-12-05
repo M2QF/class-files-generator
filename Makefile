@@ -34,9 +34,4 @@ clean :
 release :
 	make clean
 	make RELEASE=true
-	ifeq ($(OS), MacOS)
-		mv bin/class-files-generator bin/class-files-generator.dmg
-	else
-		mv bin/class-files-generator bin/class-files-generator.out
-	endif
 	make clean_obj
