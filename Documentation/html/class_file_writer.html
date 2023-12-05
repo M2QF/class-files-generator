@@ -100,10 +100,9 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a004bf2acbdc1a2f72015cd71f17aa2e2">~FileWriter</a> ()=default</td></tr>
 <tr class="memdesc:a004bf2acbdc1a2f72015cd71f17aa2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the File Writer object. <br /></td></tr>
 <tr class="separator:a004bf2acbdc1a2f72015cd71f17aa2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0444468c6d9876852f2583445e354251"><td class="memItemLeft" align="right" valign="top"><a id="a0444468c6d9876852f2583445e354251"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#a0444468c6d9876852f2583445e354251">write</a> (std::mutex *=nullptr)=0</td></tr>
-<tr class="memdesc:a0444468c6d9876852f2583445e354251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the file. <br /></td></tr>
-<tr class="separator:a0444468c6d9876852f2583445e354251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acde349e1aa5bb690448dbbffa02dd51f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#acde349e1aa5bb690448dbbffa02dd51f">write</a> (std::mutex *mutex=nullptr)=0</td></tr>
+<tr class="memdesc:acde349e1aa5bb690448dbbffa02dd51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the file.  <a href="class_file_writer.html#acde349e1aa5bb690448dbbffa02dd51f">More...</a><br /></td></tr>
+<tr class="separator:acde349e1aa5bb690448dbbffa02dd51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad752e2b2371ad5759131494fdaca4f71"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">getClassname</a> () const</td></tr>
 <tr class="memdesc:ad752e2b2371ad5759131494fdaca4f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Classname object.  <a href="class_file_writer.html#ad752e2b2371ad5759131494fdaca4f71">More...</a><br /></td></tr>
 <tr class="separator:ad752e2b2371ad5759131494fdaca4f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,6 +230,42 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="class_core_writer.html#a5dc32749c7bce0abad88b023e93581bc" title="Write the .cpp file." alt="" coords="5,5,139,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="acde349e1aa5bb690448dbbffa02dd51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acde349e1aa5bb690448dbbffa02dd51f">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FileWriter::write </td>
+          <td>(</td>
+          <td class="paramtype">std::mutex *&#160;</td>
+          <td class="paramname"><em>mutex</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>mutex to lock </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_header_writer.html#af3886febb0d72ac35aebce21b64f67bf">HeaderWriter</a>, and <a class="el" href="class_core_writer.html#a5dc32749c7bce0abad88b023e93581bc">CoreWriter</a>.</p>
 
 </div>
 </div>
