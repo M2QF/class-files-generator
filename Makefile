@@ -35,3 +35,6 @@ release :
 	make clean
 	make RELEASE=true
 	make clean_obj
+
+doc :
+	doxygen Doxyfile
