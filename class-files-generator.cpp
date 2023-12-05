@@ -57,6 +57,13 @@ int main(int argc, char *argv[])
     }
     else if (argc == 4)
     {
+        if (argv[1] != "-f")
+        {
+			std::cerr << "Invalid argument: " << argv[1] << std::endl;
+			print_help(argv[0]);
+			return 1;
+		}
+
         filename = argv[2];
         classname = argv[3];
     }
