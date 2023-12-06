@@ -1,6 +1,6 @@
 /**
  * @file filewriter.cpp
- * @author AiglonDore
+ * @author AiglonDore and sarahnourgh
  * @brief Implements {@link filewriter.h}.
  * @warning This file is yet empty as everything is in the header file.
  * @version 1.1.1
