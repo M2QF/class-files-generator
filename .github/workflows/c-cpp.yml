@@ -9,7 +9,7 @@ on:
 jobs:
   Linux_Build:
 
-    runs-on: cpp
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
